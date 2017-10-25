@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import * as firebase from 'firebase'
 import UserList from './UserList'
+import UserDetails from './UserDetails'
 
 class App extends Component {
   constructor(){
@@ -26,7 +27,10 @@ class App extends Component {
           userList={this.state.users}
           onUserSelect={selectedUser => this.setState({selectedUser})}
         />
-        
+        <UserDetails
+          user={this.state.selectedUser}
+          accounts={this.state.accounts}
+        />
       </div>
     );
   }
