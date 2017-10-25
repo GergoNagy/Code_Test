@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import * as firebase from 'firebase'
+import UserList from './UserList'
 
 class App extends Component {
   constructor(){
@@ -17,11 +18,14 @@ class App extends Component {
     const rootRef = firebase.database().ref()
     rootRef.on('value', snap => {this.setState(snap.val())})
   }
-  
+
   render() {
     return (
       <div className="App">
-        
+        <UserList
+          userList={this.state.users}
+          onUserSelect={selectedUser => this.setState({selectedUser})}
+        />
       </div>
     );
   }
