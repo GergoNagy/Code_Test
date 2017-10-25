@@ -10,9 +10,18 @@ const UserDetails = ({user, accounts}) => {
         }
     })
 
+    const showAccount = Object.values(account).map(title => {
+        const showTitle = Object.values(title).map(data => {
+            return data.title
+        })
+        return showTitle
+    })
+
     return (
         <div className='user-details'>
             <h2>{user.userName}</h2>
+            <p>Account: {user.userAcc}</p>
+            <p>Title of the app: {showAccount}</p>
         </div>
     )
 }
