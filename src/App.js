@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
+import './style/App.css';
 import * as firebase from 'firebase'
-import UserList from './UserList'
-import UserDetails from './UserDetails'
+import UserList from './components/UserList'
+import UserDetails from './components/UserDetails'
 
 class App extends Component {
   constructor(){
